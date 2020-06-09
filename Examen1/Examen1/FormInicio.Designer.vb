@@ -30,7 +30,9 @@ Partial Class FormInicio
         Me.btnIniciar = New System.Windows.Forms.Button()
         Me.btnRegistrarse = New System.Windows.Forms.Button()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtUsuario
@@ -87,6 +89,10 @@ Partial Class FormInicio
         '
         Me.ErrorProvider.ContainerControl = Me
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'FormInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -101,6 +107,7 @@ Partial Class FormInicio
         Me.Name = "FormInicio"
         Me.Text = "Login"
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -113,4 +120,5 @@ Partial Class FormInicio
     Friend WithEvents btnIniciar As Button
     Friend WithEvents btnRegistrarse As Button
     Friend WithEvents ErrorProvider As ErrorProvider
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

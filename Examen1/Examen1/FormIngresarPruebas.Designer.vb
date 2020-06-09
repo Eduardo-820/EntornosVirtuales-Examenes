@@ -42,22 +42,25 @@ Partial Class FormIngresarPruebas
         Me.cmboxEstado = New System.Windows.Forms.ComboBox()
         Me.cmboxReporte = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.listboxLista = New System.Windows.Forms.ListBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtFallecidos = New System.Windows.Forms.TextBox()
-        Me.txtRecuperados = New System.Windows.Forms.TextBox()
-        Me.txtActivos = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtFallecidos = New System.Windows.Forms.TextBox()
+        Me.txtActivos = New System.Windows.Forms.TextBox()
+        Me.txtRecuperados = New System.Windows.Forms.TextBox()
+        Me.listboxLista = New System.Windows.Forms.ListBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(220, 317)
+        Me.btnSalir.Location = New System.Drawing.Point(499, 304)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(67, 23)
         Me.btnSalir.TabIndex = 0
@@ -103,7 +106,7 @@ Partial Class FormIngresarPruebas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 129)
+        Me.Label5.Location = New System.Drawing.Point(6, 130)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(55, 13)
         Me.Label5.TabIndex = 5
@@ -163,6 +166,7 @@ Partial Class FormIngresarPruebas
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.cmboxDepartamento)
         Me.GroupBox1.Controls.Add(Me.btnRegistrar)
         Me.GroupBox1.Controls.Add(Me.cmboxEstado)
@@ -188,7 +192,7 @@ Partial Class FormIngresarPruebas
         '
         Me.cmboxDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmboxDepartamento.FormattingEnabled = True
-        Me.cmboxDepartamento.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"})
+        Me.cmboxDepartamento.Items.AddRange(New Object() {"01 Atlántida", "02 Choluteca", "03 Colón", "04 Comayagua", "05 Copán", "06 Cortés", "07 El Paraíso", "08 Francisco Morazán", "09 Gracias a Dios", "10 Intibucá", "11 Islas de la Bahía", "12 La Paz", "13 Lempira", "14 Ocotepeque", "15 Olancho", "16 Santa Bárbara", "17 Valle", "18 Yoro"})
         Me.cmboxDepartamento.Location = New System.Drawing.Point(95, 74)
         Me.cmboxDepartamento.Name = "cmboxDepartamento"
         Me.cmboxDepartamento.Size = New System.Drawing.Size(115, 21)
@@ -218,104 +222,124 @@ Partial Class FormIngresarPruebas
         '
         Me.cmboxReporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmboxReporte.FormattingEnabled = True
-        Me.cmboxReporte.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"})
-        Me.cmboxReporte.Location = New System.Drawing.Point(94, 28)
+        Me.cmboxReporte.Items.AddRange(New Object() {"01 Atlántida", "02 Choluteca", "03 Colón", "04 Comayagua", "05 Copán", "06 Cortés", "07 El Paraíso", "08 Francisco Morazán", "09 Gracias a Dios", "10 Intibucá", "11 Islas de la Bahía", "12 La Paz", "13 Lempira", "14 Ocotepeque", "15 Olancho", "16 Santa Bárbara", "17 Valle", "18 Yoro"})
+        Me.cmboxReporte.Location = New System.Drawing.Point(89, 21)
         Me.cmboxReporte.Name = "cmboxReporte"
         Me.cmboxReporte.Size = New System.Drawing.Size(115, 21)
         Me.cmboxReporte.TabIndex = 17
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.listboxLista)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.txtFallecidos)
-        Me.GroupBox2.Controls.Add(Me.txtRecuperados)
-        Me.GroupBox2.Controls.Add(Me.txtActivos)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.cmboxReporte)
         Me.GroupBox2.Location = New System.Drawing.Point(258, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(224, 286)
+        Me.GroupBox2.Size = New System.Drawing.Size(308, 286)
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Reporte"
         '
-        'listboxLista
+        'GroupBox3
         '
-        Me.listboxLista.FormattingEnabled = True
-        Me.listboxLista.Location = New System.Drawing.Point(6, 133)
-        Me.listboxLista.Name = "listboxLista"
-        Me.listboxLista.ScrollAlwaysVisible = True
-        Me.listboxLista.Size = New System.Drawing.Size(212, 147)
-        Me.listboxLista.TabIndex = 23
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 31)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(74, 13)
-        Me.Label10.TabIndex = 22
-        Me.Label10.Text = "Departamento"
-        '
-        'txtFallecidos
-        '
-        Me.txtFallecidos.Location = New System.Drawing.Point(94, 107)
-        Me.txtFallecidos.Name = "txtFallecidos"
-        Me.txtFallecidos.ReadOnly = True
-        Me.txtFallecidos.Size = New System.Drawing.Size(115, 20)
-        Me.txtFallecidos.TabIndex = 21
-        '
-        'txtRecuperados
-        '
-        Me.txtRecuperados.Location = New System.Drawing.Point(94, 81)
-        Me.txtRecuperados.Name = "txtRecuperados"
-        Me.txtRecuperados.ReadOnly = True
-        Me.txtRecuperados.Size = New System.Drawing.Size(115, 20)
-        Me.txtRecuperados.TabIndex = 20
-        '
-        'txtActivos
-        '
-        Me.txtActivos.Location = New System.Drawing.Point(94, 55)
-        Me.txtActivos.Name = "txtActivos"
-        Me.txtActivos.ReadOnly = True
-        Me.txtActivos.Size = New System.Drawing.Size(115, 20)
-        Me.txtActivos.TabIndex = 17
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(14, 110)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(54, 13)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Fallecidos"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(14, 84)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(71, 13)
-        Me.Label8.TabIndex = 18
-        Me.Label8.Text = "Recuperados"
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.Label8)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.Label9)
+        Me.GroupBox3.Controls.Add(Me.cmboxReporte)
+        Me.GroupBox3.Controls.Add(Me.txtFallecidos)
+        Me.GroupBox3.Controls.Add(Me.txtActivos)
+        Me.GroupBox3.Controls.Add(Me.txtRecuperados)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 14)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(210, 126)
+        Me.GroupBox3.TabIndex = 24
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Casos del Departamento"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(14, 58)
+        Me.Label7.Location = New System.Drawing.Point(9, 51)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(42, 13)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Activos"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(9, 77)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(71, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Recuperados"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(9, 24)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(74, 13)
+        Me.Label10.TabIndex = 22
+        Me.Label10.Text = "Departamento"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(9, 103)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(54, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Fallecidos"
+        '
+        'txtFallecidos
+        '
+        Me.txtFallecidos.Location = New System.Drawing.Point(89, 100)
+        Me.txtFallecidos.Name = "txtFallecidos"
+        Me.txtFallecidos.ReadOnly = True
+        Me.txtFallecidos.Size = New System.Drawing.Size(115, 20)
+        Me.txtFallecidos.TabIndex = 21
+        '
+        'txtActivos
+        '
+        Me.txtActivos.Location = New System.Drawing.Point(89, 48)
+        Me.txtActivos.Name = "txtActivos"
+        Me.txtActivos.ReadOnly = True
+        Me.txtActivos.Size = New System.Drawing.Size(115, 20)
+        Me.txtActivos.TabIndex = 17
+        '
+        'txtRecuperados
+        '
+        Me.txtRecuperados.Location = New System.Drawing.Point(89, 74)
+        Me.txtRecuperados.Name = "txtRecuperados"
+        Me.txtRecuperados.ReadOnly = True
+        Me.txtRecuperados.Size = New System.Drawing.Size(115, 20)
+        Me.txtRecuperados.TabIndex = 20
+        '
+        'listboxLista
+        '
+        Me.listboxLista.FormattingEnabled = True
+        Me.listboxLista.HorizontalScrollbar = True
+        Me.listboxLista.Location = New System.Drawing.Point(6, 146)
+        Me.listboxLista.Name = "listboxLista"
+        Me.listboxLista.ScrollAlwaysVisible = True
+        Me.listboxLista.Size = New System.Drawing.Size(296, 134)
+        Me.listboxLista.TabIndex = 23
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 157)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(72, 13)
+        Me.Label11.TabIndex = 17
+        Me.Label11.Text = "Estado actual"
+        '
         'FormIngresarPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(493, 352)
+        Me.ClientSize = New System.Drawing.Size(578, 337)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -326,7 +350,8 @@ Partial Class FormIngresarPruebas
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -358,4 +383,6 @@ Partial Class FormIngresarPruebas
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents listboxLista As ListBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label11 As Label
 End Class
