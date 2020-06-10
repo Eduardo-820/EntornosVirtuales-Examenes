@@ -37,6 +37,7 @@ Partial Class FormIngresarPruebas
         Me.cmboxResultado = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.cmboxDepartamento = New System.Windows.Forms.ComboBox()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.cmboxEstado = New System.Windows.Forms.ComboBox()
@@ -51,7 +52,7 @@ Partial Class FormIngresarPruebas
         Me.txtActivos = New System.Windows.Forms.TextBox()
         Me.txtRecuperados = New System.Windows.Forms.TextBox()
         Me.listboxLista = New System.Windows.Forms.ListBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -187,6 +188,15 @@ Partial Class FormIngresarPruebas
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registrar Caso"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 157)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(72, 13)
+        Me.Label11.TabIndex = 17
+        Me.Label11.Text = "Estado actual"
         '
         'cmboxDepartamento
         '
@@ -326,15 +336,6 @@ Partial Class FormIngresarPruebas
         Me.listboxLista.Size = New System.Drawing.Size(296, 134)
         Me.listboxLista.TabIndex = 23
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 157)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(72, 13)
-        Me.Label11.TabIndex = 17
-        Me.Label11.Text = "Estado actual"
-        '
         'FormIngresarPruebas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -385,4 +386,5 @@ Partial Class FormIngresarPruebas
     Friend WithEvents listboxLista As ListBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents ToolTip As ToolTip
 End Class

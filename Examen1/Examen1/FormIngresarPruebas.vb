@@ -11,7 +11,10 @@ Public Class FormIngresarPruebas
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        FormInicio.Close()
+        Dim salir As MsgBoxResult = MsgBox("Esta seguro de querer salir?", MsgBoxStyle.YesNo, "Salir")
+        If salir = MsgBoxResult.Yes Then
+            End
+        End If
     End Sub
 
     Private Sub cmboxResultado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxResultado.SelectedIndexChanged
@@ -25,19 +28,21 @@ Public Class FormIngresarPruebas
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         Try
             'mensajes de error por falta de datos
-            If txtEdad.Text = "" Then                   'dato vacio en edad
-                MsgBox("No se ha especificado la edad", MessageBoxIcon.Error)
+            If txtNombre.Text = "" Then
+                MsgBox("No se introdujo un Nombre", MessageBoxIcon.Error, "Error")
+            ElseIf txtEdad.Text = "" Then                   'dato vacio en edad
+                MsgBox("No se ha especificado la edad", MessageBoxIcon.Error, "Error")
             ElseIf Not IsNumeric(txtEdad.Text) Then     'dato no valido en edad
-                MsgBox("Edad debe ser un numero", MessageBoxIcon.Error)
+                MsgBox("Edad debe ser un numero", MessageBoxIcon.Error, "Error")
                 txtEdad.Text = ""
             ElseIf cmboxDepartamento.Text = "" Then     'departamento no seleccionado
-                MsgBox("No se ha seleccionado un departamento", MessageBoxIcon.Error)
+                MsgBox("No se ha seleccionado un departamento", MessageBoxIcon.Error, "Error")
             ElseIf txtMunicipio.Text = "" Then          'dato vacio en municipio
-                MsgBox("No ha especificado Municipio", MessageBoxIcon.Error)
+                MsgBox("No ha especificado Municipio", MessageBoxIcon.Error, "Error")
             ElseIf cmboxResultado.Text = "" Then        'resultado de la prueba no seleccionado
-                MsgBox("No se ha seleccionado un resultado de la prueba", MessageBoxIcon.Error)
+                MsgBox("No se ha seleccionado un resultado de la prueba", MessageBoxIcon.Error, "Error")
             ElseIf cmboxResultado.Text = "Positivo" And cmboxEstado.Text = "" Then  'estado no seleccionado
-                MsgBox("No se ha seleccionado el estado del caso", MessageBoxIcon.Error)
+                MsgBox("No se ha seleccionado el estado del caso", MessageBoxIcon.Error, "Error")
             Else
                 opcion = Mid(Val(cmboxDepartamento.Text), 1, 2)
                 Select Case opcion
@@ -106,6 +111,10 @@ Public Class FormIngresarPruebas
         End If
     End Sub
 
+    Private Sub txtNombre_TextChanged(sender As Object, e As EventArgs) Handles txtNombre.TextChanged
+
+    End Sub
+
     Private Sub txtEdad_Validating(sender As Object, e As CancelEventArgs) Handles txtEdad.Validating
         If txtEdad.Text = "" Then
             Me.ErrorProvider1.SetError(sender, "Este campo es obligatorio")
@@ -116,12 +125,20 @@ Public Class FormIngresarPruebas
         End If
     End Sub
 
+    Private Sub txtEdad_TextChanged(sender As Object, e As EventArgs) Handles txtEdad.TextChanged
+
+    End Sub
+
     Private Sub txtMunicipio_Validating(sender As Object, e As CancelEventArgs) Handles txtMunicipio.Validating
         If txtMunicipio.Text = "" Then
             Me.ErrorProvider1.SetError(sender, "Este campo es obligatorio")
         Else
             Me.ErrorProvider1.SetError(sender, "")
         End If
+    End Sub
+
+    Private Sub cmboxDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmboxDepartamento.SelectedIndexChanged
+
     End Sub
 
     Private Sub cmboxDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cmboxDepartamento.Validating
@@ -132,11 +149,48 @@ Public Class FormIngresarPruebas
         End If
     End Sub
 
+    Private Sub txtMunicipio_TextChanged(sender As Object, e As EventArgs) Handles txtMunicipio.TextChanged
+
+    End Sub
+
     Private Sub cmboxResultado_Validating(sender As Object, e As CancelEventArgs) Handles cmboxResultado.Validating
         If cmboxResultado.Text = "" Then
             Me.ErrorProvider1.SetError(sender, "Este campo es obligatorio")
         Else
             Me.ErrorProvider1.SetError(sender, "")
         End If
+    End Sub
+
+    'mouse hover
+    Private Sub txtNombre_MouseHover(sender As Object, e As EventArgs) Handles txtNombre.MouseHover
+        ToolTip.SetToolTip(txtNombre, "Ingrese el nombre del paciente")
+    End Sub
+
+    Private Sub txtEdad_MouseHover(sender As Object, e As EventArgs) Handles txtEdad.MouseHover
+        ToolTip.SetToolTip(txtEdad, "Ingrese la edad del paciente (utilice numeros enteros)")
+    End Sub
+
+    Private Sub cmboxDepartamento_MouseHover(sender As Object, e As EventArgs) Handles cmboxDepartamento.MouseHover
+        ToolTip.SetToolTip(cmboxDepartamento, "Seleccione el departamento al que pertenece el paciente")
+    End Sub
+
+    Private Sub txtMunicipio_MouseHover(sender As Object, e As EventArgs) Handles txtMunicipio.MouseHover
+        ToolTip.SetToolTip(txtMunicipio, "Ingrese el nombre del municio al que pertenece el paciente")
+    End Sub
+
+    Private Sub cmboxResultado_MouseHover(sender As Object, e As EventArgs) Handles cmboxResultado.MouseHover
+        ToolTip.SetToolTip(cmboxResultado, "Seleccione el resultado de la prueba en el paciente")
+    End Sub
+
+    Private Sub cmboxEstado_MouseHover(sender As Object, e As EventArgs) Handles cmboxEstado.MouseHover
+        ToolTip.SetToolTip(cmboxEstado, "Estado en el que se encuentra el paciente")
+    End Sub
+
+    Private Sub txtDescripcion_MouseHover(sender As Object, e As EventArgs) Handles txtDescripcion.MouseHover
+        ToolTip.SetToolTip(txtDescripcion, "Escriba una descripcion sobre el estado del paciente")
+    End Sub
+
+    Private Sub cmboxReporte_MouseHover(sender As Object, e As EventArgs) Handles cmboxReporte.MouseHover
+        ToolTip.SetToolTip(cmboxReporte, "Seleccione un departamento ver el reporte")
     End Sub
 End Class

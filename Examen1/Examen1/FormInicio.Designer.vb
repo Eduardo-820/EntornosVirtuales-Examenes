@@ -29,9 +29,8 @@ Partial Class FormInicio
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.btnIniciar = New System.Windows.Forms.Button()
         Me.btnRegistrarse = New System.Windows.Forms.Button()
-        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,7 +68,7 @@ Partial Class FormInicio
         '
         'btnIniciar
         '
-        Me.btnIniciar.Location = New System.Drawing.Point(145, 116)
+        Me.btnIniciar.Location = New System.Drawing.Point(141, 116)
         Me.btnIniciar.Name = "btnIniciar"
         Me.btnIniciar.Size = New System.Drawing.Size(75, 23)
         Me.btnIniciar.TabIndex = 4
@@ -78,35 +77,44 @@ Partial Class FormInicio
         '
         'btnRegistrarse
         '
-        Me.btnRegistrarse.Location = New System.Drawing.Point(145, 145)
+        Me.btnRegistrarse.Location = New System.Drawing.Point(141, 145)
         Me.btnRegistrarse.Name = "btnRegistrarse"
         Me.btnRegistrarse.Size = New System.Drawing.Size(75, 23)
         Me.btnRegistrarse.TabIndex = 5
         Me.btnRegistrarse.Text = "Registrarse"
         Me.btnRegistrarse.UseVisualStyleBackColor = True
         '
-        'ErrorProvider
-        '
-        Me.ErrorProvider.ContainerControl = Me
-        '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(2, 190)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(21, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "!"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'FormInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(359, 214)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnRegistrarse)
         Me.Controls.Add(Me.btnIniciar)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtUsuario)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormInicio"
+        Me.ShowIcon = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
-        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -119,6 +127,6 @@ Partial Class FormInicio
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnIniciar As Button
     Friend WithEvents btnRegistrarse As Button
-    Friend WithEvents ErrorProvider As ErrorProvider
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents Button1 As Button
 End Class
