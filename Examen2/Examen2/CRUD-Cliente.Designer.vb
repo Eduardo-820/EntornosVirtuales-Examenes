@@ -22,6 +22,7 @@ Partial Class CrudClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtApellido = New System.Windows.Forms.TextBox()
@@ -36,7 +37,9 @@ Partial Class CrudClientes
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLimpiar
@@ -134,7 +137,10 @@ Partial Class CrudClientes
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.Location = New System.Drawing.Point(12, 166)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(542, 183)
@@ -157,7 +163,11 @@ Partial Class CrudClientes
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "Direccion"
         '
-        'CRUD_Cliente
+        'ErrorProvider
+        '
+        Me.ErrorProvider.ContainerControl = Me
+        '
+        'CrudClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -177,9 +187,10 @@ Partial Class CrudClientes
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "CRUD_Cliente"
+        Me.Name = "CrudClientes"
         Me.Text = "CRUD_Cliente"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,4 +210,5 @@ Partial Class CrudClientes
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents ErrorProvider As ErrorProvider
 End Class

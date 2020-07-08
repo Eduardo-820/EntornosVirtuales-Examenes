@@ -46,43 +46,40 @@ Public Class CrudProducto
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        mostrarBusqueda()
-        Dim valor As Int16
         If txtCodigo.Text = "" Then
             MsgBox("Escriba un numero en la casilla", vbInformation)
         ElseIf Not IsNumeric(txtCodigo.Text) Then
             MsgBox("Ingrese un valor numerico", vbInformation)
             txtCodigo.Text = ""
-        ElseIf IsNumeric(valor) Then
-            valor = Val(txtCodigo.Text)
-            If valor = 0 Then
-                MsgBox("Ingrese una edad valida", vbInformation)
-            ElseIf valor < 1 Then
-                MsgBox("Ingrese una edad valida", vbInformation)
-            ElseIf valor > 100 Then
-                MsgBox("Ingrese una edad valida entre 1 y 100", vbInformation)
-            End If
+        Else
+            mostrarBusqueda()
         End If
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
-        Try
-            Dim guardar As String =
-             "insert into factura.producto values(" + txtCodigo.Text + ",'" + txtProducto.Text + "','" + txtDescripcion.Text + "')"
+        If txtCodigo.Text = "" Or txtProducto.Text = "" Or txtDescripcion.Text = "" Then
+            MsgBox("Error al ingresar intentar ingresar los datos. No deje campos vacios", vbExclamation)
+        ElseIf Not IsNumeric(txtCodigo.Text) Then
+            MsgBox("Error al ingresar intentar ingresar los datos. el campo Codigo solo permite valores numericos", vbExclamation)
+        Else
+            Try
+                Dim guardar As String =
+                 "insert into factura.producto values(" + txtCodigo.Text + ",'" + txtProducto.Text + "','" + txtDescripcion.Text + "')"
 
-            If (conexion.insertar(guardar)) Then
-                MessageBox.Show("Guardado")
-                mostrarDatos()
+                If (conexion.insertar(guardar)) Then
+                    MessageBox.Show("Guardado")
+                    mostrarDatos()
 
+                    conexion.coneccion.Close()
+                Else
+                    MessageBox.Show("Error al guardar")
+                    conexion.coneccion.Close()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
                 conexion.coneccion.Close()
-            Else
-                MessageBox.Show("Error al guardar")
-                conexion.coneccion.Close()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            conexion.coneccion.Close()
-        End Try
+            End Try
+        End If
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click

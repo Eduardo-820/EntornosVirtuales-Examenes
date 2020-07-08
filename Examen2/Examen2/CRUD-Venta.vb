@@ -14,8 +14,9 @@ Public Class CrudVenta
             txtCodigo.Text = dtg.Cells(0).Value.ToString()
             dateTimeFecha.Text = dtg.Cells(1).Value.ToString()
             txtPrecio.Text = dtg.Cells(2).Value.ToString()
-            txtCodCliente.Text = dtg.Cells(3).Value.ToString()
-            txtCodProducto.Text = dtg.Cells(4).Value.ToString()
+            txtCantidad.Text = dtg.Cells(3).Value.ToString()
+            txtCodCliente.Text = dtg.Cells(4).Value.ToString()
+            txtCodProducto.Text = dtg.Cells(5).Value.ToString()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -46,50 +47,60 @@ Public Class CrudVenta
 
 
     Private Sub mostrarDatos()
-        conexion.consulta("select idVenta as 'Identidad Venta', fechaVenta as 'Fecha de Venta', precio as 'Precio de Producto', cantidad as Cantidad, idCliente as 'Identidad Cliente', idProducto as 'Identidad Producto' from factura.Venta", "factura.Venta")
+        conexion.consulta("select idVenta as 'Codigo de Venta', fechaVenta as 'Fecha de Venta', precio as 'Precio de Producto', cantidad as Cantidad, idCliente as 'Codigo de Cliente', idProducto as 'Codigo del Producto' from factura.Venta", "factura.Venta")
         DataGridView1.DataSource = conexion.datSet.Tables("factura.Venta")
     End Sub
 
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
-        Try
-            Dim guardar As String =
-             "insert into factura.Venta values(" + txtCodigo.Text + ",'" + dateTimeFecha.Text + "',
+
+        If txtCodigo.Text = "" Or txtPrecio.Text = "" Or txtCantidad.Text = "" Or txtCodCliente.Text = "" Or txtCodCliente.Text = "" Then
+            MsgBox("Error al ingresar intentar ingresar los datos. No deje campos vacios", vbExclamation)
+        ElseIf Not IsNumeric(txtCodigo.Text) Or Not IsNumeric(txtPrecio.Text) Or Not IsNumeric(txtCantidad.Text) Or Not IsNumeric(txtCodCliente.Text) Or Not IsNumeric(txtCodProducto.Text) Then
+            MsgBox("Error al ingresar intentar ingresar los datos. los campos de Codigos, precio y cantidad solo permiten valores numericos", vbExclamation)
+        Else
+            Try
+                Dim guardar As String =
+                 "insert into factura.Venta values(" + txtCodigo.Text + ",'" + dateTimeFecha.Text + "',
              '" + txtPrecio.Text + "','" + txtCantidad.Text + "','" + txtCodCliente.Text + "','" + txtCodProducto.Text + "')"
 
-            If (conexion.insertar(guardar)) Then
-                MessageBox.Show("Guardado")
-                mostrarDatos()
+                If (conexion.insertar(guardar)) Then
+                    MessageBox.Show("Guardado")
+                    mostrarDatos()
 
+                    conexion.coneccion.Close()
+                Else
+                    MessageBox.Show("Error al guardar")
+                    conexion.coneccion.Close()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
                 conexion.coneccion.Close()
-            Else
-                MessageBox.Show("Error al guardar")
-                conexion.coneccion.Close()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            conexion.coneccion.Close()
-        End Try
-
+            End Try
+        End If
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        Try
-
-            Dim modificar As String =
-            "idVenta='" + txtCodigo.Text + "', fechaVenta='" + dateTimeFecha.Text + "', precio='" + txtPrecio.Text + "', cantidad='" + txtCantidad.Text + "', idCliente ='" + txtCodCliente.Text + "', idProducto ='" + txtCodProducto.Text + "'"
-            If (conexion.modificar("factura.Venta", modificar, " idVenta=" + txtCodigo.Text)) Then
-                MessageBox.Show("Actualizado")
-                mostrarDatos()
-                limpiar()
-                conexion.coneccion.Close()
-            Else
-                MessageBox.Show("Error al actualizar")
-                conexion.coneccion.Close()
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        If txtCodigo.Text = "" Or txtPrecio.Text = "" Or txtCantidad.Text = "" Or txtCodCliente.Text = "" Or txtCodCliente.Text = "" Then
+            MsgBox("Error al ingresar intentar ingresar los datos. No deje campos vacios", vbExclamation)
+        ElseIf Not IsNumeric(txtCodigo.Text) Or Not IsNumeric(txtPrecio.Text) Or Not IsNumeric(txtCantidad.Text) Or Not IsNumeric(txtCodCliente.Text) Or Not IsNumeric(txtCodProducto.Text) Then
+            MsgBox("Error al ingresar intentar ingresar los datos. los campos de Codigos, precio y cantidad solo permiten valores numericos", vbExclamation)
+        Else
+            Try
+                Dim modificar As String =
+                "idVenta='" + txtCodigo.Text + "', fechaVenta='" + dateTimeFecha.Text + "', precio='" + txtPrecio.Text + "', cantidad='" + txtCantidad.Text + "', idCliente ='" + txtCodCliente.Text + "', idProducto ='" + txtCodProducto.Text + "'"
+                If (conexion.modificar("factura.Venta", modificar, " idVenta=" + txtCodigo.Text)) Then
+                    MessageBox.Show("Actualizado")
+                    mostrarDatos()
+                    limpiar()
+                    conexion.coneccion.Close()
+                Else
+                    MessageBox.Show("Error al actualizar")
+                    conexion.coneccion.Close()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
         End Try
-
+        End If
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -109,22 +120,15 @@ Public Class CrudVenta
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        mostrarBusqueda()
-        Dim valor As Int16
         If txtCodCliente.Text = "" Then
-            MsgBox("Escriba un numero en la casilla", vbInformation)
+            MsgBox("Escriba un numero en campo Codigo Cliente", vbInformation)
+            mostrarDatos()
         ElseIf Not IsNumeric(txtCodCliente.Text) Then
-            MsgBox("Ingrese un valor numerico", vbInformation)
-            txtCodCliente.Text = ""
-        ElseIf IsNumeric(valor) Then
-            valor = Val(txtCodCliente.Text)
-            If valor = 0 Then
-                MsgBox("Ingrese una edad valida", vbInformation)
-            ElseIf valor < 1 Then
-                MsgBox("Ingrese una edad valida", vbInformation)
-            ElseIf valor > 100 Then
-                MsgBox("Ingrese una edad valida entre 1 y 100", vbInformation)
-            End If
+            MsgBox("Ingrese un valor numerico en el campo Codigo Cliente", vbInformation)
+            txtCodigo.Text = ""
+            mostrarDatos()
+        Else
+            mostrarBusqueda()
         End If
     End Sub
 

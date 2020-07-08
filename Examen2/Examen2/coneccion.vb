@@ -22,7 +22,12 @@ Public Class coneccion
         End Try
     End Sub
 
-    Public Sub consulta(ByVal sql, ByVal tabla)        datSet.Tables.Clear()        datAdap = New SqlDataAdapter(sql, coneccion)        comandoBuilder = New SqlCommandBuilder(datAdap)        datAdap.Fill(datSet, tabla)    End Sub
+    Public Sub consulta(ByVal sql, ByVal tabla)
+        datSet.Tables.Clear()
+        datAdap = New SqlDataAdapter(sql, coneccion)
+        comandoBuilder = New SqlCommandBuilder(datAdap)
+        datAdap.Fill(datSet, tabla)
+    End Sub
 
     Function eliminar(ByVal tabla, ByVal donde)
         coneccion.Open()
@@ -50,14 +55,77 @@ Public Class coneccion
         End If
     End Function
 
-    Function insertar(ByVal sql)        coneccion.Open()        comando = New SqlCommand(sql, coneccion)        Dim i As Integer = comando.ExecuteNonQuery()        If (i > 0) Then            Return True        Else            Return False        End If    End Function
+    Function insertar(ByVal sql)
+        coneccion.Open()
+        comando = New SqlCommand(sql, coneccion)
+        Dim i As Integer = comando.ExecuteNonQuery()
+        If (i > 0) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
-    Function BuscarVenta(ByVal condicion) As DataTable        Try            coneccion.Open()            Dim encontrar As String = "select idVenta as 'Identidad Venta', fechaVenta as 'Fecha de Venta', precio as 'Precio de Producto', cantidad as Cantidad, idCliente as 'Identidad Cliente', idProducto as 'Identidad Producto' from factura.Venta" + " where " + condicion
-            Dim cmd As New SqlCommand(encontrar, coneccion)            If cmd.ExecuteNonQuery Then                Dim dt As New DataTable                Dim da As New SqlDataAdapter(cmd)                da.Fill(dt)                Return dt            Else                Return Nothing            End If            coneccion.Close()        Catch ex As Exception            MsgBox(ex.Message)            Return Nothing        End Try    End Function
+    Function BuscarVenta(ByVal condicion) As DataTable
+        Try
+            coneccion.Open()
+            Dim encontrar As String = "select idVenta as 'Codigo de Venta', fechaVenta as 'Fecha de Venta', precio as 'Precio de Producto', cantidad as Cantidad, idCliente as 'Codigo de Cliente', idProducto as 'Codigo del Producto' from factura.Venta" + " where " + condicion
 
-    Function BuscarProducto(ByVal condicion) As DataTable        Try            coneccion.Open()            Dim encontrar As String = "select idProducto as 'Codigo Producto', nombreProducto as 'Nombre del Producto',descripcion as 'Descripcion' from factura.producto" + " where " + condicion
-            Dim cmd As New SqlCommand(encontrar, coneccion)            If cmd.ExecuteNonQuery Then                Dim dt As New DataTable                Dim da As New SqlDataAdapter(cmd)                da.Fill(dt)                Return dt            Else                Return Nothing            End If            coneccion.Close()        Catch ex As Exception            MsgBox(ex.Message)            Return Nothing        End Try    End Function
+            Dim cmd As New SqlCommand(encontrar, coneccion)
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+            coneccion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 
-    Function BuscarCliente(ByVal condicion) As DataTable        Try            coneccion.Open()            Dim encontrar As String = "select idCliente as 'Codigo', nombre as 'Nombre', apellido as 'Apellido', direccion as 'Direccion' from factura.cliente" + " where " + condicion
-            Dim cmd As New SqlCommand(encontrar, coneccion)            If cmd.ExecuteNonQuery Then                Dim dt As New DataTable                Dim da As New SqlDataAdapter(cmd)                da.Fill(dt)                Return dt            Else                Return Nothing            End If            coneccion.Close()        Catch ex As Exception            MsgBox(ex.Message)            Return Nothing        End Try    End Function
+    Function BuscarProducto(ByVal condicion) As DataTable
+        Try
+            coneccion.Open()
+            Dim encontrar As String = "select idProducto as 'Codigo Producto', nombreProducto as 'Nombre del Producto',descripcion as 'Descripcion' from factura.producto" + " where " + condicion
+
+            Dim cmd As New SqlCommand(encontrar, coneccion)
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+            coneccion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Function BuscarCliente(ByVal condicion) As DataTable
+        Try
+            coneccion.Open()
+            Dim encontrar As String = "select idCliente as 'Codigo', nombre as 'Nombre', apellido as 'Apellido', direccion as 'Direccion' from factura.cliente" + " where " + condicion
+
+            Dim cmd As New SqlCommand(encontrar, coneccion)
+            If cmd.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmd)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+            coneccion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class
