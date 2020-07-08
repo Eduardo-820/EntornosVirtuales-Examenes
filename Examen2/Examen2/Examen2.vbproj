@@ -73,10 +73,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="coneccion.vb" />
-    <Compile Include="CRUD.Designer.vb">
-      <DependentUpon>CRUD.vb</DependentUpon>
+    <Compile Include="CRUD-Cliente.Designer.vb">
+      <DependentUpon>CRUD-Cliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="CRUD.vb">
+    <Compile Include="CRUD-Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD-Producto.Designer.vb">
+      <DependentUpon>CRUD-Producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD-Producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUD-Venta.Designer.vb">
+      <DependentUpon>CRUD-Venta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CRUD-Venta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -103,8 +115,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CRUD.resx">
-      <DependentUpon>CRUD.vb</DependentUpon>
+    <EmbeddedResource Include="CRUD-Cliente.resx">
+      <DependentUpon>CRUD-Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUD-Producto.resx">
+      <DependentUpon>CRUD-Producto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUD-Venta.resx">
+      <DependentUpon>CRUD-Venta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

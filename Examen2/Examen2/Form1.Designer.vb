@@ -25,10 +25,10 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelMenu = New System.Windows.Forms.Panel()
-        Me.btnEmpleado = New System.Windows.Forms.Button()
+        Me.btnProducto = New System.Windows.Forms.Button()
+        Me.btnCliente = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
         Me.PanelMostrar = New System.Windows.Forms.Panel()
-        Me.btnProducto = New System.Windows.Forms.Button()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -41,7 +41,7 @@ Partial Class Form1
         '
         Me.PanelMenu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.PanelMenu.Controls.Add(Me.btnProducto)
-        Me.PanelMenu.Controls.Add(Me.btnEmpleado)
+        Me.PanelMenu.Controls.Add(Me.btnCliente)
         Me.PanelMenu.Controls.Add(Me.btnVentas)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
@@ -49,18 +49,31 @@ Partial Class Form1
         Me.PanelMenu.Size = New System.Drawing.Size(113, 435)
         Me.PanelMenu.TabIndex = 1
         '
-        'btnEmpleado
+        'btnProducto
         '
-        Me.btnEmpleado.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmpleado.Location = New System.Drawing.Point(0, 105)
-        Me.btnEmpleado.Name = "btnEmpleado"
-        Me.btnEmpleado.Size = New System.Drawing.Size(113, 23)
-        Me.btnEmpleado.TabIndex = 2
-        Me.btnEmpleado.Text = "Empleado"
-        Me.btnEmpleado.UseVisualStyleBackColor = False
+        Me.btnProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProducto.Location = New System.Drawing.Point(0, 134)
+        Me.btnProducto.Name = "btnProducto"
+        Me.btnProducto.Size = New System.Drawing.Size(113, 23)
+        Me.btnProducto.TabIndex = 3
+        Me.btnProducto.Text = "Producto"
+        Me.btnProducto.UseVisualStyleBackColor = False
+        '
+        'btnCliente
+        '
+        Me.btnCliente.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCliente.Location = New System.Drawing.Point(0, 105)
+        Me.btnCliente.Name = "btnCliente"
+        Me.btnCliente.Size = New System.Drawing.Size(113, 23)
+        Me.btnCliente.TabIndex = 2
+        Me.btnCliente.Text = "Cliente"
+        Me.btnCliente.UseVisualStyleBackColor = False
         '
         'btnVentas
         '
@@ -83,19 +96,6 @@ Partial Class Form1
         Me.PanelMostrar.Size = New System.Drawing.Size(754, 435)
         Me.PanelMostrar.TabIndex = 2
         '
-        'btnProducto
-        '
-        Me.btnProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProducto.Location = New System.Drawing.Point(0, 134)
-        Me.btnProducto.Name = "btnProducto"
-        Me.btnProducto.Size = New System.Drawing.Size(113, 23)
-        Me.btnProducto.TabIndex = 3
-        Me.btnProducto.Text = "Producto"
-        Me.btnProducto.UseVisualStyleBackColor = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -113,7 +113,7 @@ Partial Class Form1
     Friend WithEvents ErrorProvider As ErrorProvider
     Friend WithEvents PanelMostrar As Panel
     Friend WithEvents PanelMenu As Panel
-    Friend WithEvents btnEmpleado As Button
+    Friend WithEvents btnCliente As Button
     Friend WithEvents btnVentas As Button
     Friend WithEvents btnProducto As Button
 End Class
