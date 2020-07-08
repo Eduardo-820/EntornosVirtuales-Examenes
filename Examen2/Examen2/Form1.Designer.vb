@@ -23,184 +23,97 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.txtFecha = New System.Windows.Forms.MaskedTextBox()
-        Me.txtPrecio = New System.Windows.Forms.TextBox()
-        Me.txtCantidad = New System.Windows.Forms.TextBox()
-        Me.txtCodCliente = New System.Windows.Forms.TextBox()
-        Me.txtCodProducto = New System.Windows.Forms.TextBox()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btn = New System.Windows.Forms.Button()
-        Me.btnCRUD = New System.Windows.Forms.Button()
+        Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.btnEmpleado = New System.Windows.Forms.Button()
+        Me.btnVentas = New System.Windows.Forms.Button()
+        Me.PanelMostrar = New System.Windows.Forms.Panel()
+        Me.btnProducto = New System.Windows.Forms.Button()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelMenu.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Codigo"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 46)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Fecha"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 81)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(37, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Precio"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(13, 115)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Cantidad"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 149)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(75, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Codigo Cliente"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 186)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(86, 13)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Codigo Producto"
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Location = New System.Drawing.Point(106, 10)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodigo.TabIndex = 6
-        '
-        'txtFecha
-        '
-        Me.txtFecha.Location = New System.Drawing.Point(106, 43)
-        Me.txtFecha.Mask = "00/00/0000"
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(100, 20)
-        Me.txtFecha.TabIndex = 7
-        Me.txtFecha.ValidatingType = GetType(Date)
-        '
-        'txtPrecio
-        '
-        Me.txtPrecio.Location = New System.Drawing.Point(106, 78)
-        Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecio.TabIndex = 8
-        '
-        'txtCantidad
-        '
-        Me.txtCantidad.Location = New System.Drawing.Point(106, 112)
-        Me.txtCantidad.Name = "txtCantidad"
-        Me.txtCantidad.Size = New System.Drawing.Size(100, 20)
-        Me.txtCantidad.TabIndex = 9
-        '
-        'txtCodCliente
-        '
-        Me.txtCodCliente.Location = New System.Drawing.Point(106, 146)
-        Me.txtCodCliente.Name = "txtCodCliente"
-        Me.txtCodCliente.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodCliente.TabIndex = 10
-        '
-        'txtCodProducto
-        '
-        Me.txtCodProducto.Location = New System.Drawing.Point(106, 183)
-        Me.txtCodProducto.Name = "txtCodProducto"
-        Me.txtCodProducto.Size = New System.Drawing.Size(100, 20)
-        Me.txtCodProducto.TabIndex = 11
         '
         'ErrorProvider
         '
         Me.ErrorProvider.ContainerControl = Me
         '
-        'btn
+        'PanelMenu
         '
-        Me.btn.Location = New System.Drawing.Point(118, 221)
-        Me.btn.Name = "btn"
-        Me.btn.Size = New System.Drawing.Size(75, 23)
-        Me.btn.TabIndex = 12
-        Me.btn.Text = "Ingresar"
-        Me.btn.UseVisualStyleBackColor = True
+        Me.PanelMenu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.PanelMenu.Controls.Add(Me.btnProducto)
+        Me.PanelMenu.Controls.Add(Me.btnEmpleado)
+        Me.PanelMenu.Controls.Add(Me.btnVentas)
+        Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelMenu.Location = New System.Drawing.Point(0, 0)
+        Me.PanelMenu.Name = "PanelMenu"
+        Me.PanelMenu.Size = New System.Drawing.Size(113, 435)
+        Me.PanelMenu.TabIndex = 1
         '
-        'btnCRUD
+        'btnEmpleado
         '
-        Me.btnCRUD.Location = New System.Drawing.Point(291, 184)
-        Me.btnCRUD.Name = "btnCRUD"
-        Me.btnCRUD.Size = New System.Drawing.Size(62, 60)
-        Me.btnCRUD.TabIndex = 13
-        Me.btnCRUD.Text = "Crear Leer Actualizar Eliminar"
-        Me.btnCRUD.UseVisualStyleBackColor = True
+        Me.btnEmpleado.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEmpleado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnEmpleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmpleado.Location = New System.Drawing.Point(0, 105)
+        Me.btnEmpleado.Name = "btnEmpleado"
+        Me.btnEmpleado.Size = New System.Drawing.Size(113, 23)
+        Me.btnEmpleado.TabIndex = 2
+        Me.btnEmpleado.Text = "Empleado"
+        Me.btnEmpleado.UseVisualStyleBackColor = False
+        '
+        'btnVentas
+        '
+        Me.btnVentas.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVentas.Location = New System.Drawing.Point(0, 76)
+        Me.btnVentas.Name = "btnVentas"
+        Me.btnVentas.Size = New System.Drawing.Size(113, 23)
+        Me.btnVentas.TabIndex = 1
+        Me.btnVentas.Text = "Ventas"
+        Me.btnVentas.UseVisualStyleBackColor = False
+        '
+        'PanelMostrar
+        '
+        Me.PanelMostrar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelMostrar.Location = New System.Drawing.Point(113, 0)
+        Me.PanelMostrar.Name = "PanelMostrar"
+        Me.PanelMostrar.Size = New System.Drawing.Size(754, 435)
+        Me.PanelMostrar.TabIndex = 2
+        '
+        'btnProducto
+        '
+        Me.btnProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProducto.Location = New System.Drawing.Point(0, 134)
+        Me.btnProducto.Name = "btnProducto"
+        Me.btnProducto.Size = New System.Drawing.Size(113, 23)
+        Me.btnProducto.TabIndex = 3
+        Me.btnProducto.Text = "Producto"
+        Me.btnProducto.UseVisualStyleBackColor = False
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(365, 256)
-        Me.Controls.Add(Me.btnCRUD)
-        Me.Controls.Add(Me.btn)
-        Me.Controls.Add(Me.txtCodProducto)
-        Me.Controls.Add(Me.txtCodCliente)
-        Me.Controls.Add(Me.txtCantidad)
-        Me.Controls.Add(Me.txtPrecio)
-        Me.Controls.Add(Me.txtFecha)
-        Me.Controls.Add(Me.txtCodigo)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(867, 435)
+        Me.Controls.Add(Me.PanelMostrar)
+        Me.Controls.Add(Me.PanelMenu)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents txtCodigo As TextBox
-    Friend WithEvents txtFecha As MaskedTextBox
-    Friend WithEvents txtPrecio As TextBox
-    Friend WithEvents txtCantidad As TextBox
-    Friend WithEvents txtCodCliente As TextBox
-    Friend WithEvents txtCodProducto As TextBox
     Friend WithEvents ErrorProvider As ErrorProvider
-    Friend WithEvents btn As Button
-    Friend WithEvents btnCRUD As Button
+    Friend WithEvents PanelMostrar As Panel
+    Friend WithEvents PanelMenu As Panel
+    Friend WithEvents btnEmpleado As Button
+    Friend WithEvents btnVentas As Button
+    Friend WithEvents btnProducto As Button
 End Class
