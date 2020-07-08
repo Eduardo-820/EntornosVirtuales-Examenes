@@ -128,4 +128,6 @@ Public Class coneccion
             Return Nothing
         End Try
     End Function
+
+    Public Function consultareporte() As DataTable        Try            coneccion.Open()            Dim cmd As New SqlCommand("reporte", coneccion)            cmd.CommandType = CommandType.StoredProcedure            If cmd.ExecuteNonQuery Then                Dim dt As New DataTable                Dim da As New SqlDataAdapter(cmd)                da.Fill(dt)                Return dt            Else                Return Nothing            End If        Catch ex As Exception            MsgBox(ex.Message)            Return Nothing        End Try    End Function
 End Class

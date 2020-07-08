@@ -42,6 +42,7 @@ Partial Class CrudVenta
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.ErrorProvider = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorProvider, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,14 +53,14 @@ Partial Class CrudVenta
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 180)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 145)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(667, 183)
+        Me.DataGridView1.Size = New System.Drawing.Size(667, 218)
         Me.DataGridView1.TabIndex = 0
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(240, 25)
+        Me.btnCrear.Location = New System.Drawing.Point(413, 58)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(102, 23)
         Me.btnCrear.TabIndex = 1
@@ -68,7 +69,7 @@ Partial Class CrudVenta
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(240, 83)
+        Me.btnActualizar.Location = New System.Drawing.Point(413, 87)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(102, 23)
         Me.btnActualizar.TabIndex = 2
@@ -77,7 +78,7 @@ Partial Class CrudVenta
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(240, 112)
+        Me.btnEliminar.Location = New System.Drawing.Point(413, 116)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(102, 23)
         Me.btnEliminar.TabIndex = 3
@@ -86,35 +87,35 @@ Partial Class CrudVenta
         '
         'txtCodProducto
         '
-        Me.txtCodProducto.Location = New System.Drawing.Point(107, 155)
+        Me.txtCodProducto.Location = New System.Drawing.Point(274, 112)
         Me.txtCodProducto.Name = "txtCodProducto"
         Me.txtCodProducto.Size = New System.Drawing.Size(100, 20)
         Me.txtCodProducto.TabIndex = 23
         '
         'txtCodCliente
         '
-        Me.txtCodCliente.Location = New System.Drawing.Point(107, 129)
+        Me.txtCodCliente.Location = New System.Drawing.Point(274, 86)
         Me.txtCodCliente.Name = "txtCodCliente"
         Me.txtCodCliente.Size = New System.Drawing.Size(100, 20)
         Me.txtCodCliente.TabIndex = 22
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(107, 103)
+        Me.txtCantidad.Location = New System.Drawing.Point(274, 60)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(100, 20)
         Me.txtCantidad.TabIndex = 21
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(107, 77)
+        Me.txtPrecio.Location = New System.Drawing.Point(70, 112)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
         Me.txtPrecio.TabIndex = 20
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(107, 25)
+        Me.txtCodigo.Location = New System.Drawing.Point(70, 60)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtCodigo.TabIndex = 18
@@ -122,7 +123,7 @@ Partial Class CrudVenta
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 158)
+        Me.Label6.Location = New System.Drawing.Point(182, 115)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(86, 13)
         Me.Label6.TabIndex = 17
@@ -131,7 +132,7 @@ Partial Class CrudVenta
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(20, 132)
+        Me.Label5.Location = New System.Drawing.Point(193, 89)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(75, 13)
         Me.Label5.TabIndex = 16
@@ -140,7 +141,7 @@ Partial Class CrudVenta
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(20, 106)
+        Me.Label4.Location = New System.Drawing.Point(219, 63)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 15
@@ -149,7 +150,7 @@ Partial Class CrudVenta
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 80)
+        Me.Label3.Location = New System.Drawing.Point(27, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 14
@@ -158,7 +159,7 @@ Partial Class CrudVenta
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(20, 54)
+        Me.Label2.Location = New System.Drawing.Point(27, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
         Me.Label2.TabIndex = 13
@@ -167,7 +168,7 @@ Partial Class CrudVenta
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(20, 28)
+        Me.Label7.Location = New System.Drawing.Point(24, 63)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 12
@@ -177,7 +178,7 @@ Partial Class CrudVenta
         '
         Me.dateTimeFecha.CustomFormat = "yyyy/MM/dd"
         Me.dateTimeFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dateTimeFecha.Location = New System.Drawing.Point(107, 51)
+        Me.dateTimeFecha.Location = New System.Drawing.Point(70, 86)
         Me.dateTimeFecha.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.dateTimeFecha.Name = "dateTimeFecha"
         Me.dateTimeFecha.Size = New System.Drawing.Size(100, 20)
@@ -186,16 +187,16 @@ Partial Class CrudVenta
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(240, 54)
+        Me.btnBuscar.Location = New System.Drawing.Point(521, 58)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(102, 23)
+        Me.btnBuscar.Size = New System.Drawing.Size(102, 52)
         Me.btnBuscar.TabIndex = 25
         Me.btnBuscar.Text = "Buscar por Cliente"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(240, 141)
+        Me.btnLimpiar.Location = New System.Drawing.Point(521, 116)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(102, 23)
         Me.btnLimpiar.TabIndex = 26
@@ -206,12 +207,23 @@ Partial Class CrudVenta
         '
         Me.ErrorProvider.ContainerControl = Me
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(138, 33)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "VENTAS"
+        '
         'CrudVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(691, 375)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.dateTimeFecha)
@@ -259,4 +271,5 @@ Partial Class CrudVenta
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents ErrorProvider As ErrorProvider
+    Friend WithEvents Label1 As Label
 End Class

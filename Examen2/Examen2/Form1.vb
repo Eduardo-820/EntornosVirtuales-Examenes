@@ -30,4 +30,8 @@ Public Class Form1
     Private Sub btnCliente_Click(sender As Object, e As EventArgs) Handles btnCliente.Click
         abrirFormulario(CrudClientes)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        abrirFormulario(Resumen)
+    End Sub
 End Class
